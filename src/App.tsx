@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  BrowserRouter as Router, 
+  HashRouter as Router, 
   Routes, 
   Route, 
   Link, 
@@ -60,6 +60,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <Stethoscope size={24} />
           </div>
           <span className="font-display font-extrabold text-xl tracking-tight text-primary">TRAQUEOKIDS</span>
+          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-mono font-bold self-start mt-1">v0.1.1</span>
         </Link>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-primary md:hidden">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
