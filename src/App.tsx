@@ -70,7 +70,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <Stethoscope size={24} />
           </div>
           <span className="font-display font-extrabold text-xl tracking-tight text-primary">TRAQUEOKIDS</span>
-          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-mono font-bold self-start mt-1">v0.1.7</span>
+          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-mono font-bold self-start mt-1">v0.1.8</span>
         </Link>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-primary md:hidden">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -329,19 +329,33 @@ const Schooling = () => {
           La integración escolar es posible y necesaria. Ofrecemos materiales para facilitar este proceso.
         </p>
         <ul className="space-y-3">
-          <li className="flex gap-3 bg-bg-light p-3 rounded-xl border border-gray-100">
-            <Download className="text-primary shrink-0" size={20} />
-            <div className="text-xs">
-              <p className="font-bold">Presentación Inicio Escolar</p>
-              <p className="text-text-muted">Para Traqueostomía y Gastrostomía.</p>
-            </div>
+          <li>
+            <a 
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:d27e3620-cc4c-41dc-b023-dda76b45a053"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-3 bg-bg-light p-3 rounded-xl border border-gray-100 active:scale-[0.98] transition-transform"
+            >
+              <Download className="text-primary shrink-0" size={20} />
+              <div className="text-xs">
+                <p className="font-bold">Presentación Inicio Escolar</p>
+                <p className="text-text-muted">Para Traqueostomía y Gastrostomía.</p>
+              </div>
+            </a>
           </li>
-          <li className="flex gap-3 bg-bg-light p-3 rounded-xl border border-gray-100">
-            <Download className="text-primary shrink-0" size={20} />
-            <div className="text-xs">
-              <p className="font-bold">Planilla informativa</p>
-              <p className="text-text-muted">Para completar y presentar en el colegio.</p>
-            </div>
+          <li>
+            <a 
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:6bde1cb4-a679-43c9-8dce-c98d7b5cc4f4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-3 bg-bg-light p-3 rounded-xl border border-gray-100 active:scale-[0.98] transition-transform"
+            >
+              <Download className="text-primary shrink-0" size={20} />
+              <div className="text-xs">
+                <p className="font-bold">Planilla informativa</p>
+                <p className="text-text-muted">Para completar y presentar en el colegio.</p>
+              </div>
+            </a>
           </li>
         </ul>
       </div>
