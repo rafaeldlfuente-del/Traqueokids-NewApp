@@ -37,6 +37,16 @@ import { motion, AnimatePresence } from 'motion/react';
 
 // --- Components ---
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,7 +70,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <Stethoscope size={24} />
           </div>
           <span className="font-display font-extrabold text-xl tracking-tight text-primary">TRAQUEOKIDS</span>
-          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-mono font-bold self-start mt-1">v0.1.5</span>
+          <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-mono font-bold self-start mt-1">v0.1.7</span>
         </Link>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-primary md:hidden">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -242,32 +252,37 @@ const Resources = () => {
     {
       title: "Folletos Descargables",
       desc: "Flyer informativo y folleto básico para familias en UCIP.",
-      link: "https://traqueokids.org/"
+      link: "https://traqueokids.org/folletos/"
     },
     {
       title: "Guía del Cuidado",
-      desc: "Hecha por familias para familias y cuidadores.",
-      link: "https://traqueokids.org/"
+      desc: "Guía completa del cuidado hecha por familias y expertos.",
+      link: "https://traqueokids.org/guia-de-cuidados/"
     },
     {
       title: "MiniGuía TQT",
-      desc: "Recurso esencial para llevar siempre consigo.",
-      link: "https://traqueokids.org/"
+      desc: "Recurso esencial y compacto para llevar siempre consigo.",
+      link: "https://traqueokids.org/miniguia/"
     },
     {
       title: "Tarjeta TQT",
-      desc: "Atención médica rápida en situaciones de emergencia.",
-      link: "https://traqueokids.org/tarjeta-de-emergency-sanitaria-para-pacientes-con-traqueostomia/"
+      desc: "Asegura atención rápida y efectiva en emergencias.",
+      link: "https://traqueokids.org/tarjeta-de-emergencia-sanitaria-para-pacientes-con-traqueostomia/"
     },
     {
       title: "Guía de Viaje",
-      desc: "Experiencias reales para viajar sin miedo.",
+      desc: "Consejos y experiencias reales para viajar con seguridad.",
       link: "https://traqueokids.org/guia-de-viaje-para-familias-viajar-con-traqueostomia/"
     },
     {
       title: "Pasaporte TQT",
-      desc: "Información esencial sobre cuidados y comunicación.",
+      desc: "Documento clave con necesidades y comunicación del paciente.",
       link: "https://traqueokids.org/pasaporte-para-pacientes-con-traqueostomia/"
+    },
+    {
+      title: "Guías TQT Completas",
+      desc: "Accede a todo el repositorio de guías especializadas.",
+      link: "https://traqueokids.org/"
     }
   ];
 
@@ -579,6 +594,7 @@ const Contact = () => {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
