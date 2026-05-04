@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Nunito", sans-serif;
+
+  --color-primary: #2E86AB;
+  --color-secondary: #A23B72;
+  --color-accent: #F18F01;
+  --color-bg-light: #F7F9FC;
+  --color-text-main: #1A1A2E;
+  --color-text-muted: #6B7280;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-text-main font-sans;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-bold;
+  }
+}
+
+.markdown-body {
+  @apply space-y-4;
+}
+
+.card {
+  @apply bg-white rounded-[16px] p-6 shadow-sm border border-gray-100;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition-all;
+}
