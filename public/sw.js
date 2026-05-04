@@ -3,7 +3,9 @@ const CACHE_NAME = 'traqueokids-v1';
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(['./', 'index.html', 'manifest.webmanifest']);
+      // Use a safer list of assets to cache
+      return cache.addAll(['./', 'index.html', 'manifest.webmanifest'])
+        .catch(err => console.warn('SW: Optional assets failed to cache during install:', err));
     })
   );
 });
