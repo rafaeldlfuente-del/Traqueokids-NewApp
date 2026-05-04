@@ -2,7 +2,7 @@
   "name": "Traqueokids PWA",
   "short_name": "Traqueokids",
   "description": "Asociación de apoyo a familias con traqueostomía pediátrica",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#F7F9FC",
   "theme_color": "#2E86AB",
